@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /Lapkaland/
+RewriteRule ^category/(.*)?$ conncategory.php?id=$1 [L,QSA] 
+RewriteRule ^page/(.*)$ page.php?pageId=$1 [L] 
+RewriteRule ^tag/(.*)?$ conntag.php?id=$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d [NC]
+RewriteCond %{REQUEST_FILENAME} !-f [NC]
+RewriteRule ^(.*)$ display.php?id=$1 [QSA,L]
+ 
